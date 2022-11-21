@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="FormCss.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>BEE PROJECT</header>
+
+      <form action="/addapi" method="post">
+        <div class="form first">
+          <div class="details personal">
+            <span class="title">Personal Details</span>
+
+            <div class="fields">
+              <div class="input-field">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  name="fullname"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Email</label>
+                <input
+                  type="text"
+                  placeholder="Enter your email"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Address</label>
+                <input
+                  type="text"
+                  placeholder="Enter your Address"
+                  name="address"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="details ID">
+            <span class="title">Marks Details</span>
+
+            <div class="fields">
+              <div class="input-field">
+                <label>Mathematics</label>
+                <input
+                  type="number"
+                  id="am"
+                  placeholder="Enter Mathematics Marks"
+                  name="mathematics"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Science</label>
+                <input
+                  type="number"
+                  id="aj"
+                  placeholder="Enter Science Marks"
+                  name="science"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>English</label>
+                <input
+                  type="number"
+                  id="ad"
+                  placeholder="Enter English Marks"
+                  name="english"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>General Knowledge</label>
+                <input
+                  type="number"
+                  id="an"
+                  placeholder="Enter G.K. Marks"
+                  name="g.k."
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Sanskrit</label>
+                <input
+                  type="number"
+                  id="the"
+                  placeholder="Enter Sanskrit Marks"
+                  name="sanskrit"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Total Marks</label>
+                <input
+                  type="number"
+                  id="total"
+                  placeholder="Total Marks"
+                  name="totalmarks"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Average</label>
+                <input
+                  type="number"
+                  id="avg"
+                  placeholder="Average"
+                  name="Average"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label>Grade</label>
+                <input
+                  type="text"
+                  id="Grade"
+                  placeholder="Grade"
+                  name="Grade"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" onclick="myfunction()" class="nextBtn">
+              <input type="submit" class="btnText" />
+              <i class="uil uil-navigator"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      function myfunction() {
+        var n, k, r, e, v, sum, avg;
+        n = parseFloat(document.getElementById("am").value);
+        k = parseFloat(document.getElementById("aj").value);
+        r = parseFloat(document.getElementById("ad").value);
+        e = parseFloat(document.getElementById("an").value);
+        v = parseFloat(document.getElementById("the").value);
+        sum = n + k + r + e + v;
+        avg = sum / 5;
+        document.getElementById("total").value = sum;
+        document.getElementById("avg").value = avg;
+
+        if (avg >= 33) {
+          document.getElementById("Grade").value = "Pass";
+        } else {
+          document.getElementById("Grade").value = "Fail";
+        }
+      }
+    </script>
+  </body>
+</html>
